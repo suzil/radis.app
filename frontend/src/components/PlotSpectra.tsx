@@ -23,7 +23,7 @@ export const PlotSpectra: React.FC = () => {
         onLoaderFinished={() => setProgress(0)}
       />
       {error ? <ErrorAlert message={error} /> : null}
-      <Grid container spacing={4}>
+      <Grid container justifyContent="center" spacing={4}>
         <Grid item xs={12} sm={8} md={5} lg={5}>
           <Form
             setPlotSettings={setPlotSettings}
@@ -34,7 +34,9 @@ export const PlotSpectra: React.FC = () => {
             setSpectra={setSpectra}
           />
         </Grid>
+      </Grid>
 
+      <Grid container justifyContent="center" style={{ marginTop: 16 }}>
         <Grid item xs={12} sm={12} md={7} lg={7}>
           {loading ? (
             <div
@@ -42,6 +44,8 @@ export const PlotSpectra: React.FC = () => {
                 display: "flex",
                 justifyContent: "center",
                 marginTop: 230,
+                alignItems: "center",
+                height: "100%",
               }}
             >
               <CircularProgress />
@@ -52,10 +56,8 @@ export const PlotSpectra: React.FC = () => {
               <div
                 style={{
                   display: "flex",
-
                   justifyContent: "center",
                   alignItems: "center",
-
                   height: "100%",
                   width: "100%",
                 }}
